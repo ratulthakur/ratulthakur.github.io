@@ -97,6 +97,39 @@ ul{
     color: #777;
 }
 
+
+
+
+
+    
+.research-topics {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.research-topics li {
+    position: relative;
+    margin-bottom: 1.2rem;
+    padding: 0.9rem 1rem 0.9rem 1.8rem;
+    border-left: 3px solid #3b82f6;
+    background: #fafafa;
+    border-radius: 6px;
+    line-height: 1.6;
+}
+
+.research-topics li::before {
+    content: "▸";
+    position: absolute;
+    left: 0.7rem;
+    color: #3b82f6;
+    font-weight: bold;
+}
+
+.research-topics strong {
+    color: #1f2937;
+}
+
 @media (max-width: 700px) {
     .profile {
         flex-direction: column;
@@ -177,7 +210,7 @@ ul{
 
 <b>My interests revolve around various aspects locally interacting many body quantum systems out of equilibrium and how they furnish universal features in quantum information scrambling. My current research focuses on the following problems:
 </b></br>
-<ul>
+<ul class="research-topics">
 <li>Quantum chaos (beyond Random-matrix Theory) in locally interacting systems. Correlation structure beyond the Eigenstate thermalization hypothesis and connection to the spatiotemporal profile of information scrambling and entanglement growth.</li></br>
 <li>Thermalization, localization and integrability. Information theoretic characterization of these dynamical regimes.</li></br>
 <li>Nonequilibrium phases and phase transitions in quantum systems: Measurement induced phase transition and its critical properties; Phase transition in nonstabilizerness ("Magic"). </li></br>
