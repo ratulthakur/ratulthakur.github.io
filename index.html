@@ -1,259 +1,501 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="google-site-verification" content="xN_X5LfohI2acbVFx5eEnyMO1RAWLqTGRK5Y36NLpNw" />
-    
 <title>Ratul Thakur</title>
 
 <style>
+:root{
+    --bg:#f6f5f3;
+    --panel:#ffffff;
+    --text:#2b2b2b;
+    --text-soft:#6b6b6b;
+    --border:#e7e4df;
+    --accent:#8a6d3b;
+    --accent-soft:#f1ece2;
+    --radius-lg:18px;
+    --radius-md:12px;
+    --radius-sm:8px;
+    --shadow:0 1px 3px rgba(0,0,0,0.04), 0 6px 20px rgba(0,0,0,0.03);
+    --maxw:1180px;
+}
+
+*{ box-sizing:border-box; }
+
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
     margin:0;
-    background:#f5f5f5;
-    color:#333;
-    line-height:1.6;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.65;
+    font-size:16px;
 }
 
-header{
-    background:#222;
-    color:white;
-    padding:15px 8px;
-    text-align:center;
+a{ color:var(--accent); }
+a:hover{ text-decoration:underline; }
+
+/* ---------- top bar ---------- */
+.topbar{
+    position:sticky;
+    top:0;
+    z-index:10;
+    background:rgba(246,245,243,0.9);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--border);
 }
 
-nav{
-    background:#444;
-    padding:10px;
-    text-align:center;
+.topbar-inner{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:14px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    flex-wrap:wrap;
 }
 
-nav a{
-    color:white;
-    margin:0 15px;
+.brand{
+    font-weight:700;
+    font-size:1.05rem;
+    letter-spacing:0.2px;
+    color:var(--text);
     text-decoration:none;
+}
+.brand:hover{ text-decoration:none; }
+
+nav.mainnav{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+nav.mainnav a{
+    color:var(--text-soft);
+    text-decoration:none;
+    font-size:0.92rem;
+    font-weight:600;
+}
+
+nav.mainnav a:hover{
+    color:var(--accent);
+    text-decoration:none;
+}
+
+/* ---------- layout ---------- */
+.layout{
+    max-width:var(--maxw);
+    margin:0 auto;
+    padding:36px 24px 60px;
+    display:grid;
+    grid-template-columns:300px 1fr;
+    gap:32px;
+    align-items:start;
+}
+
+/* ---------- sidebar ---------- */
+.sidebar{
+    position:sticky;
+    top:78px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
+    padding:24px;
+}
+
+.profile-card{
+    text-align:center;
+}
+
+.profile-card img{
+    width:150px;
+    height:150px;
+    object-fit:cover;
+    border-radius:var(--radius-md);
+    margin-bottom:14px;
+}
+
+.profile-card h1{
+    font-size:1.25rem;
+    margin:0 0 2px;
+}
+
+.profile-card .role{
+    color:var(--text-soft);
+    font-size:0.92rem;
+    margin:0 0 14px;
+}
+
+.profile-card .institute{
+    font-size:0.88rem;
+    color:var(--text-soft);
+    margin:0 0 16px;
+}
+
+.link-row{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:14px;
+}
+
+.link-row a{
+    font-size:0.82rem;
+    font-weight:600;
+    text-decoration:none;
+    padding:6px 12px;
+    border:1px solid var(--border);
+    border-radius:999px;
+    color:var(--text);
+    background:var(--accent-soft);
+}
+
+.link-row a:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+    text-decoration:none;
+}
+
+.profile-card .email{
+    font-size:0.85rem;
+    color:var(--text-soft);
+    word-break:break-all;
+}
+
+/* ---------- news ---------- */
+.news-card h2{
+    font-size:0.95rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--text-soft);
+    margin:0 0 16px;
+}
+
+.news-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
+
+.news-list li{
+    padding-bottom:14px;
+    border-bottom:1px solid var(--border);
+    font-size:0.9rem;
+}
+
+.news-list li:last-child{
+    border-bottom:none;
+    padding-bottom:0;
+}
+
+.news-date{
+    display:block;
+    font-size:0.75rem;
+    font-weight:700;
+    color:var(--accent);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:4px;
+}
+
+.news-tag{
+    display:inline-block;
+    font-size:0.68rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.03em;
+    color:var(--accent);
+    background:var(--accent-soft);
+    border-radius:5px;
+    padding:1px 6px;
+    margin-right:6px;
+    vertical-align:1px;
+}
+
+/* ---------- main content ---------- */
+.main section{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow);
+    padding:32px;
+    margin-bottom:28px;
+}
+
+.main section:last-child{ margin-bottom:0; }
+
+.main h2{
+    font-size:1.15rem;
+    margin:0 0 18px;
+    padding-bottom:12px;
+    border-bottom:1px solid var(--border);
+}
+
+.main .lede{
+    color:var(--text-soft);
+    margin:0 0 16px;
+}
+
+ul.research-topics{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.research-topics li{
+    position:relative;
+    padding:10px 14px 10px 34px;
+    background:var(--accent-soft);
+    border-radius:var(--radius-sm);
+    line-height:1.5;
+    font-size:0.95rem;
+}
+
+.research-topics li::before{
+    content:"\25B8";
+    position:absolute;
+    left:14px;
+    color:var(--accent);
     font-weight:bold;
 }
 
-nav a:hover{
-    text-decoration:underline;
+.research-topics strong{ color:var(--text); }
+
+.pub-list{
+    list-style:none;
+    padding:0;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
 }
 
-.container{
-    max-width:900px;
-    margin:auto;
-    padding:40px 20px;
-    background:white;
+.pub-list li{
+    padding-bottom:16px;
+    border-bottom:1px solid var(--border);
 }
 
-h2{
-    border-bottom:2px solid #eee;
-    padding-bottom:5px;
+.pub-list li:last-child{
+    border-bottom:none;
+    padding-bottom:0;
 }
+
+.pub-title{
+    font-style:italic;
+    margin-bottom:4px;
+}
+
+.pub-authors{
+    font-size:0.92rem;
+    color:var(--text-soft);
+    margin-bottom:4px;
+}
+
+.pub-venue a{
+    font-size:0.88rem;
+    text-decoration:none;
+    margin-right:10px;
+}
+
+.pub-venue a:hover{ text-decoration:underline; }
 
 footer{
     text-align:center;
-    padding:20px;
-    background:#222;
-    color:white;
-    margin-top:40px;
+    padding:24px;
+    color:var(--text-soft);
+    font-size:0.85rem;
 }
 
-ul{
-    padding-left:20px;
-}
-
-.profile {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    margin: 2rem 0;
-}
-
-.profile-image img {
-    width: 220px;
-    border-radius: 8px;
-    display: block;
-}
-
-.profile-content {
-    flex: 1;
-}
-
-.profile-links {
-    margin-bottom: 1rem;
-    font-size: 1.05rem;
-}
-
-.profile-links a {
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.profile-links span {
-    margin: 0 0.5rem;
-    color: #777;
-}
-
-
-
-
-
-    
-.research-topics {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-}
-
-.research-topics li {
-    position: relative;
-    margin-bottom: 0rem;
-    padding: 0.2rem 1rem 0.2rem 2rem;
-    border-left: 4px solid #a9a9a9;
-    background: #fafafa;
-    border-radius: 4px;
-    line-height: 1.4;
-}
-
-.research-topics li::before {
-    content: "▸";
-    position: absolute;
-    left: 0.5rem;
-    color: #a9a9a9;
-    font-weight: bold;
-}
-    
-.research-topics strong {
-    color: #1f2937;
-}
-
-@media (max-width: 700px) {
-    .profile {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+/* ---------- responsive ---------- */
+@media (max-width:860px){
+    .layout{
+        grid-template-columns:1fr;
+        padding:24px 16px 40px;
     }
-
-    .profile-image img {
-        width: 180px;
+    .sidebar{
+        position:static;
+        top:auto;
+    }
+    nav.mainnav{
+        gap:14px;
+    }
+    .main section{
+        padding:22px;
     }
 }
 
+@media (max-width:480px){
+    .topbar-inner{
+        padding:12px 16px;
+    }
+    nav.mainnav a{
+        font-size:0.85rem;
+    }
+    .profile-card img{
+        width:120px;
+        height:120px;
+    }
+}
 </style>
-
 </head>
 <body>
 
-<header>
-<h1>Ratul Thakur</h1>
-<p>Graduate Student in Theoretical Physics</p>
-</header>
-
-<nav>
-<a href="#about">About</a>
-<a href="#research">Research</a>
-<a href="#publications">Publications</a>
-<a href="/talks.html">Talks</a>
-<a href="/docs/CV-ratul-thakur.pdf">CV</a>
-<a href="#contact">Contact</a>
-</nav>
-
-<div class="container">
-
-<section id="about">
-<h2>About</h2>
-
-
-
-<div class="profile">
-
-    <div class="profile-image">
-        <img src="./img/2025_formal.jpg" alt="Profile photo">
+<div class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="#top">Ratul Thakur</a>
+        <nav class="mainnav">
+            <a href="#about">About</a>
+            <a href="#research">Research</a>
+            <a href="#publications">Publications</a>
+            <a href="/talks.html">Talks</a>
+            <a href="/docs/CV-ratul-thakur.pdf">CV</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </div>
-
-    <div class="profile-content">
-        <p>
-            I am a graduate student at the <a href = "https://www.icts.res.in/">International Centre for Theoretical
-            Sciences of the Tata Institute of Fundamental Research</a>. My research interests lie at the interface of many-body quantum dyanmics and quantum information. More details about my
-            work can be found <a href="#research">here</a>. A complete list
-            of my publications is available on my
-            <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">
-                Google Scholar profile
-            </a>.
-        </p>
-
-        <hr>
-        
-        <div class="profile-links">
-            <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">Google Scholar</a>
-            <span>•</span>
-            <a href="https://arxiv.org/a/thakur_r_1.html">arXiv</a>
-            <span>•</span>
-            <a href="https://github.com/ratulthakur">GitHub</a>
-        </div>
-        
-        <hr>
-        
-        <p>Email: <i>ratul.thakur@icts.res.in</i></p>
-
-    </div>
-
 </div>
 
-</section>
+<div class="layout" id="top">
 
-<section id="research">
-<h2>Research</h2>
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar">
 
-<b>My interests revolve around various aspects locally interacting many body quantum systems out of equilibrium and how they furnish universal features in quantum information scrambling. My current research focuses on the following problems:
-</b></br>
-<ul class="research-topics">
-<li>Quantum chaos (beyond Random-matrix Theory) in locally interacting systems. Correlation structure beyond the Eigenstate thermalization hypothesis and connection to the spatiotemporal profile of information scrambling and entanglement growth.</li></br>
-<li>Thermalization, localization and integrability. Information theoretic characterization of these dynamical regimes.</li></br>
-<li>Nonequilibrium phases and phase transitions in quantum systems: Measurement induced phase transition and its critical properties; Phase transition in nonstabilizerness ("Magic"). </li></br>
-<li>Sensitivity of the dynamics of quantum information, entanglement and other quantum resources to the presence of hydrodynamic modes in systems which host local conservation laws. </li></br>
-</ul>
-</section>
+        <div class="card profile-card" id="about">
+            <img src="./img/2025_formal.jpg" alt="Profile photo">
+            <h1>Ratul Thakur</h1>
+            <p class="role">Graduate Student, Theoretical Physics</p>
+            <p class="institute">
+                International Centre for Theoretical Sciences,<br>
+                Tata Institute of Fundamental Research
+            </p>
+            <div class="link-row">
+                <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">Scholar</a>
+                <a href="https://arxiv.org/a/thakur_r_1.html">arXiv</a>
+                <a href="https://github.com/ratulthakur">GitHub</a>
+            </div>
+            <p class="email">ratul.thakur@icts.res.in</p>
+        </div>
 
-<section id="publications">
-<h2>Publications and Preprints</h2>
-<ul>
+        <!-- ================= NEWS ================= -->
+        <!--
+            To add a news item: copy one <li> block and edit the date,
+            tag (PUBLICATION / TALK / POSTER / NEWS) and text.
+            Newest entries should go at the top of the list.
+        -->
+        <div class="card news-card">
+            <h2>News</h2>
+            <ul class="news-list">
+                <li>
+                    <span class="news-date">Aug 2026</span>
+                    <span class="news-tag">Preprint</span>
+                    New paper <em>"Dynamics of local quantum information in random unitary circuits"</em> posted on arXiv.
+                </li>
+                <li>
+                    <span class="news-date">Jul 2025</span>
+                    <span class="news-tag">Publication</span>
+                    Paper with Bikram Pain and Sthitadhi Roy accepted in <em>Phys. Rev. B</em>.
+                </li>
+            </ul>
+        </div>
 
-<li>
-<p><i>Dynamics of local quantum information in random unitary circuits</i><br> <strong>Ratul Thakur</strong> and Sthitadhi Roy<br> 
-<a href="https://arxiv.org/abs/2608.27440">[arXiv:2608.27440]</a></p>
-</li>
-    
-<li>
-<p><i>Imprints of information scrambling on eigenstates of a quantum chaotic system</i><br> Bikram Pain,<strong>Ratul Thakur</strong>, and Sthitadhi Roy<br> 
-<a href="https://doi.org/10.1103/r1gj-g99c">[Phys. Rev. B <b>114</b>, L140302 (2026)]</a><a href="https://arxiv.org/abs/2507.02853">[arXiv:2507.02853]</a></p>
-</li>
-    
-<li>
-<p><i>Logarithmic entanglement lightcone from eigenstate correlations in the many-body localised phase</i><br> <strong>Ratul Thakur</strong>, Bikram Pain, and Sthitadhi Roy<br> 
-<a href="https://link.aps.org/doi/10.1103/PhysRevB.111.174206">[Phys. Rev. B <b>111</b>, 174206 (2025)]</a> <a href="https://arxiv.org/abs/2504.02815">[arXiv:2504.02815]</a></p>
-</li>
-    
-</ul>
-</section>
+    </aside>
 
-<section id="contact">
-<h2>Contact</h2>
-<p>Email: ratul.thakur@icts.res.in</p>
-<p>
-<a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">Google Scholar</a> |
-<a href="https://arxiv.org/a/thakur_r_1.html">arXiv</a> |
-<a href="https://github.com/ratulthakur">GitHub</a>
-</p>
-</section>
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main">
+
+        <section id="brief">
+            <h2>Brief</h2>
+            <p class="lede">
+                I am a graduate student at the <a href = "https://www.icts.res.in/">International Centre for Theoretical
+                Sciences of the Tata Institute of Fundamental Research (ICTS-TIFR)</a>. My research interests lie at the interface of many-body quantum dyanmics and quantum information. More details about my
+                work can be found <a href="#research">here</a>. A complete list
+                of my publications is available on my
+                <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">
+                    Google Scholar profile
+                </a>.
+            </p>
+
+            <p>
+                Before joining ICTS-TIFR in 2023, I was a Bachelor's Student at Indian Institute of Technology, Roorkee. I grew up in Sundernagar, Himachal Pradesh, where I also completed my schooling in 2019. 
+            </p>
+            
+        </section>
+
+        <section id="research">
+            <h2>Research</h2>
+            <p class="lede">
+                My interests revolve around locally interacting many-body quantum systems out of equilibrium,
+                and how they furnish universal features in quantum information scrambling. My current research
+                focuses on the following problems:
+            </p>
+            <ul class="research-topics">
+                <li>Quantum chaos (beyond Random-matrix Theory) in locally interacting systems. Correlation structure beyond the Eigenstate thermalization hypothesis and connection to the spatiotemporal profile of information scrambling and entanglement growth.</li>
+                <li>Thermalization, localization and integrability. Information theoretic characterization of these dynamical regimes.</li>
+                <li>Nonequilibrium phases and phase transitions in quantum systems: Measurement induced phase transition and its critical properties; Phase transition in nonstabilizerness (&ldquo;Magic&rdquo;).</li>
+                <li>Sensitivity of the dynamics of quantum information, entanglement and other quantum resources to the presence of hydrodynamic modes in systems which host local conservation laws.</li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2>Publications and Preprints</h2>
+            <ul class="pub-list">
+                <li>
+                    <p class="pub-title">Dynamics of local quantum information in random unitary circuits</p>
+                    <p class="pub-authors"><strong>Ratul Thakur</strong> and Sthitadhi Roy</p>
+                    <p class="pub-venue">
+                        <a href="https://arxiv.org/abs/2608.27440">arXiv:2608.27440</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="pub-title">Imprints of information scrambling on eigenstates of a quantum chaotic system</p>
+                    <p class="pub-authors">Bikram Pain, <strong>Ratul Thakur</strong>, and Sthitadhi Roy</p>
+                    <p class="pub-venue">
+                        <a href="https://doi.org/10.1103/r1gj-g99c">Phys. Rev. B 114, L140302 (2026)</a>
+                        <a href="https://arxiv.org/abs/2507.02853">arXiv:2507.02853</a>
+                    </p>
+                </li>
+                <li>
+                    <p class="pub-title">Logarithmic entanglement lightcone from eigenstate correlations in the many-body localised phase</p>
+                    <p class="pub-authors"><strong>Ratul Thakur</strong>, Bikram Pain, and Sthitadhi Roy</p>
+                    <p class="pub-venue">
+                        <a href="https://link.aps.org/doi/10.1103/PhysRevB.111.174206">Phys. Rev. B 111, 174206 (2025)</a>
+                        <a href="https://arxiv.org/abs/2504.02815">arXiv:2504.02815</a>
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:ratul.thakur@icts.res.in">ratul.thakur@icts.res.in</a></p>
+            <p>
+                <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">Google Scholar</a> &middot;
+                <a href="https://arxiv.org/a/thakur_r_1.html">arXiv</a> &middot;
+                <a href="https://github.com/ratulthakur">GitHub</a>
+            </p>
+        </section>
+
+    </main>
 
 </div>
 
 <footer>
-© 2026 Ratul Thakur
+    &copy; 2026 Ratul Thakur
 </footer>
 
 </body>
