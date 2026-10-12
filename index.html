@@ -6,353 +6,8 @@
 <meta name="google-site-verification" content="xN_X5LfohI2acbVFx5eEnyMO1RAWLqTGRK5Y36NLpNw" />
 <title>Ratul Thakur</title>
 
-<style>
-:root {
-    --bg: #f4f6f2;
-    --panel: #ffffff;
-    --text: #1e2b1e;
-    --text-soft: #5a6b58;
-    --border: #dce8d8;
-    --accent: #4a7c59;
-    --accent-soft: #e8f2e8;
-    --radius-lg: 18px;
-    --radius-md: 12px;
-    --radius-sm: 8px;
-    --shadow: 0 1px 3px rgba(0,0,0,0.04), 0 6px 20px rgba(0,0,0,0.03);
-    --maxw: 1180px;
-}
-
-*{ box-sizing:border-box; }
-
-body{
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.65;
-    font-size:16px;
-}
-
-a{ color:var(--accent); }
-a:hover{ text-decoration:underline; }
-
-/* ---------- top bar ---------- */
-.topbar{
-    position:sticky;
-    top:0;
-    z-index:10;
-    background:rgba(246,245,243,0.9);
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--border);
-}
-
-.topbar-inner{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:14px 24px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:16px;
-    flex-wrap:wrap;
-}
-
-.brand{
-    font-weight:700;
-    font-size:1.05rem;
-    letter-spacing:0.2px;
-    color:var(--text);
-    text-decoration:none;
-}
-.brand:hover{ text-decoration:none; }
-
-nav.mainnav{
-    display:flex;
-    gap:22px;
-    flex-wrap:wrap;
-}
-
-nav.mainnav a{
-    color:var(--text-soft);
-    text-decoration:none;
-    font-size:0.92rem;
-    font-weight:600;
-}
-
-nav.mainnav a:hover{
-    color:var(--accent);
-    text-decoration:none;
-}
-
-/* ---------- layout ---------- */
-.layout{
-    max-width:var(--maxw);
-    margin:0 auto;
-    padding:36px 24px 60px;
-    display:grid;
-    grid-template-columns:300px 1fr;
-    gap:32px;
-    align-items:start;
-}
-
-/* ---------- sidebar ---------- */
-.sidebar{
-    position:sticky;
-    top:78px;
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-}
-
-.card{
-    background:var(--panel);
-    border:1px solid var(--border);
-    border-radius:var(--radius-lg);
-    box-shadow:var(--shadow);
-    padding:24px;
-}
-
-.profile-card{
-    text-align:center;
-}
-
-.profile-card img{
-    width:150px;
-    height:150px;
-    object-fit:cover;
-    border-radius:var(--radius-md);
-    margin-bottom:14px;
-}
-
-.profile-card h1{
-    font-size:1.25rem;
-    margin:0 0 2px;
-}
-
-.profile-card .role{
-    color:var(--text-soft);
-    font-size:0.92rem;
-    margin:0 0 14px;
-}
-
-.profile-card .institute{
-    font-size:0.88rem;
-    color:var(--text-soft);
-    margin:0 0 16px;
-}
-
-.link-row{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    flex-wrap:wrap;
-    margin-bottom:14px;
-}
-
-.link-row a{
-    font-size:0.82rem;
-    font-weight:600;
-    text-decoration:none;
-    padding:6px 12px;
-    border:1px solid var(--border);
-    border-radius:999px;
-    color:var(--text);
-    background:var(--accent-soft);
-}
-
-.link-row a:hover{
-    border-color:var(--accent);
-    color:var(--accent);
-    text-decoration:none;
-}
-
-.profile-card .email{
-    font-size:0.85rem;
-    color:var(--text-soft);
-    word-break:break-all;
-}
-
-/* ---------- news ---------- */
-.news-card h2{
-    font-size:0.95rem;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    color:var(--text-soft);
-    margin:0 0 16px;
-}
-
-.news-list{
-    list-style:none;
-    margin:0;
-    padding:0;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
-
-.news-list li{
-    padding-bottom:14px;
-    border-bottom:1px solid var(--border);
-    font-size:0.9rem;
-}
-
-.news-list li:last-child{
-    border-bottom:none;
-    padding-bottom:0;
-}
-
-.news-date{
-    display:block;
-    font-size:0.75rem;
-    font-weight:700;
-    color:var(--accent);
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-    margin-bottom:4px;
-}
-
-.news-tag{
-    display:inline-block;
-    font-size:0.68rem;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:0.03em;
-    color:var(--accent);
-    background:var(--accent-soft);
-    border-radius:5px;
-    padding:1px 6px;
-    margin-right:6px;
-    vertical-align:1px;
-}
-
-/* ---------- main content ---------- */
-.main section{
-    background:var(--panel);
-    border:1px solid var(--border);
-    border-radius:var(--radius-lg);
-    box-shadow:var(--shadow);
-    padding:32px;
-    margin-bottom:28px;
-}
-
-.main section:last-child{ margin-bottom:0; }
-
-.main h2{
-    font-size:1.15rem;
-    margin:0 0 18px;
-    padding-bottom:12px;
-    border-bottom:1px solid var(--border);
-}
-
-.main .lede{
-    color:var(--text-soft);
-    margin:0 0 16px;
-}
-
-ul.research-topics{
-    list-style:none;
-    padding:0;
-    margin:0;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.research-topics li{
-    position:relative;
-    padding:10px 14px 10px 34px;
-    background:var(--accent-soft);
-    border-radius:var(--radius-sm);
-    line-height:1.5;
-    font-size:0.95rem;
-}
-
-.research-topics li::before{
-    content:"\25B8";
-    position:absolute;
-    left:14px;
-    color:var(--accent);
-    font-weight:bold;
-}
-
-.research-topics strong{ color:var(--text); }
-
-.pub-list{
-    list-style:none;
-    padding:0;
-    margin:0;
-    display:flex;
-    flex-direction:column;
-    gap:18px;
-}
-
-.pub-list li{
-    padding-bottom:16px;
-    border-bottom:1px solid var(--border);
-}
-
-.pub-list li:last-child{
-    border-bottom:none;
-    padding-bottom:0;
-}
-
-.pub-title{
-    font-style:italic;
-    margin-bottom:4px;
-}
-
-.pub-authors{
-    font-size:0.92rem;
-    color:var(--text-soft);
-    margin-bottom:4px;
-}
-
-.pub-venue a{
-    font-size:0.88rem;
-    text-decoration:none;
-    margin-right:10px;
-}
-
-.pub-venue a:hover{ text-decoration:underline; }
-
-footer{
-    text-align:center;
-    padding:24px;
-    color:var(--text-soft);
-    font-size:0.85rem;
-}
-
-/* ---------- responsive ---------- */
-@media (max-width:860px){
-    .layout{
-        grid-template-columns:1fr;
-        padding:24px 16px 40px;
-    }
-    .sidebar{
-        position:static;
-        top:auto;
-    }
-    nav.mainnav{
-        gap:14px;
-    }
-    .main section{
-        padding:22px;
-    }
-}
-
-@media (max-width:480px){
-    .topbar-inner{
-        padding:12px 16px;
-    }
-    nav.mainnav a{
-        font-size:0.85rem;
-    }
-    .profile-card img{
-        width:120px;
-        height:120px;
-    }
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
 </head>
 <body>
 
@@ -363,9 +18,13 @@ footer{
             <a href="#about">About</a>
             <a href="#research">Research</a>
             <a href="#publications">Publications</a>
-            <a href="/talks.html">Talks</a>
-            <a href="/docs/CV-ratul-thakur.pdf">CV</a>
+            <a href="talks.html">Talks</a>
+            <a href="posters.html">Posters</a>
+            <a href="docs/CV-ratul-thakur.pdf">CV</a>
             <a href="#contact">Contact</a>
+            <button type="button" class="theme-toggle" aria-label="Dark theme" aria-pressed="true">
+                <span class="opt-light">light</span><span class="opt-dark">dark</span>
+            </button>
         </nav>
     </div>
 </div>
@@ -378,14 +37,15 @@ footer{
         <div class="card profile-card" id="about">
             <img src="./img/2025_formal.jpg" alt="Profile photo">
             <h1>Ratul Thakur</h1>
-            <p class="role">Graduate Student, Theoretical Physics</p>
+            <p class="role">Graduate Student in Theoretical Physics</p>
             <p class="institute">
-                International Centre for Theoretical Sciences,<br>
-                Tata Institute of Fundamental Research
+                <b>International Centre for Theoretical Sciences,<br>
+                Tata Institute of Fundamental Research</b>
             </p>
             <div class="link-row">
                 <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">Scholar</a>
                 <a href="https://arxiv.org/a/thakur_r_1.html">arXiv</a>
+                <a href="https://orcid.org/0009-0009-2498-9259">ORCID</a>
                 <a href="https://github.com/ratulthakur">GitHub</a>
             </div>
             <p class="email">ratul.thakur@icts.res.in</p>
@@ -398,8 +58,14 @@ footer{
             Newest entries should go at the top of the list.
         -->
         <div class="card news-card">
-            <h2>News</h2>
+            <h2>Recent Updates</h2>
             <ul class="news-list">
+                <li>
+                    <span class="news-date">Sep 2026</span>
+                    <span class="news-tag">Poster</span>
+                    Presented a <a href="posters.html">poster</a> on local quantum information dynamics at
+                    <a href="https://www.pks.mpg.de/qmbsoe26">QMBSOE26</a>, MPIPKS Dresden.
+                </li>
                 <li>
                     <span class="news-date">Aug 2026</span>
                     <span class="news-tag">Preprint</span>
@@ -422,16 +88,13 @@ footer{
             <h2>Brief</h2>
             <p class="lede">
                 I am a graduate student at the <a href = "https://www.icts.res.in/">International Centre for Theoretical
-                Sciences of the Tata Institute of Fundamental Research (ICTS-TIFR)</a>. My research interests lie at the interface of many-body quantum dyanmics and quantum information. More details about my
-                work can be found <a href="#research">here</a>. A complete list
+                Sciences of the Tata Institute of Fundamental Research (ICTS-TIFR)</a>. My research interests lie at the interface of many-body quantum dynamics and quantum information. A complete list
                 of my publications is available on my
-                <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">
-                    Google Scholar profile
-                </a>.
+                <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">Google Scholar profile</a>.
             </p>
 
             <p>
-                Before joining ICTS-TIFR in 2023, I was a Bachelor's Student at Indian Institute of Technology, Roorkee. I grew up in Sundernagar, Himachal Pradesh, where I also completed my schooling in 2019. 
+                Before joining ICTS-TIFR in 2023, I was a Bachelor's Student at <a href="https://en.wikipedia.org/wiki/IIT_Roorkee">Indian Institute of Technology, Roorkee</a>. I grew up in Sundernagar, Himachal Pradesh, where I also completed my schooling in 2019. 
             </p>
             
         </section>
@@ -439,21 +102,20 @@ footer{
         <section id="research">
             <h2>Research</h2>
             <p class="lede">
-                My interests revolve around locally interacting many-body quantum systems out of equilibrium,
-                and how they furnish universal features in quantum information scrambling. My current research
-                focuses on the following problems:
+                I study locally interacting quantum many-body systems out of equilibrium, and the universal
+                features they exhibit in the scrambling of quantum information. My current work focuses on:
             </p>
             <ul class="research-topics">
-                <li>Quantum chaos (beyond Random-matrix Theory) in locally interacting systems. Correlation structure beyond the Eigenstate thermalization hypothesis and connection to the spatiotemporal profile of information scrambling and entanglement growth.</li>
-                <li>Thermalization, localization and integrability. Information theoretic characterization of these dynamical regimes.</li>
-                <li>Nonequilibrium phases and phase transitions in quantum systems: Measurement induced phase transition and its critical properties; Phase transition in nonstabilizerness (&ldquo;Magic&rdquo;).</li>
-                <li>Sensitivity of the dynamics of quantum information, entanglement and other quantum resources to the presence of hydrodynamic modes in systems which host local conservation laws.</li>
+                <li><strong>Quantum chaos beyond random-matrix theory.</strong> Correlations in locally interacting systems that go beyond the eigenstate thermalization hypothesis, and how they shape the spatiotemporal profile of information scrambling and entanglement growth.</li>
+                <li><strong>Thermalization, localization, and integrability.</strong> Information-theoretic characterizations of these dynamical regimes.</li>
+                <li><strong>Nonequilibrium phases and phase transitions.</strong> Measurement-induced phase transitions and their critical properties; phase transitions in nonstabilizerness (&ldquo;magic&rdquo;).</li>
+                <li><strong>Hydrodynamics and quantum information.</strong> How hydrodynamic modes in systems with local conservation laws affect the dynamics of quantum information, entanglement, and other quantum resources.</li>
             </ul>
         </section>
 
         <section id="publications">
             <h2>Publications and Preprints</h2>
-            <ul class="pub-list">
+            <ol class="pub-list" reversed>
                 <li>
                     <p class="pub-title">Dynamics of local quantum information in random unitary circuits</p>
                     <p class="pub-authors"><strong>Ratul Thakur</strong> and Sthitadhi Roy</p>
@@ -477,12 +139,14 @@ footer{
                         <a href="https://arxiv.org/abs/2504.02815">arXiv:2504.02815</a>
                     </p>
                 </li>
-            </ul>
+            </ol>
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
             <p>Email: <a href="mailto:ratul.thakur@icts.res.in">ratul.thakur@icts.res.in</a></p>
+            <p>Alternate Email: <a href="mailto:ratulthakur314@gmail.com">ratulthakur314@gmail.com</a></p>
+            <p>ORCID: <a href="https://orcid.org/0009-0009-2498-9259">0009-0009-2498-9259</a></p>
             <p>
                 <a href="https://scholar.google.com/citations?hl=en&user=3H1ROcYAAAAJ&view_op=list_works">Google Scholar</a> &middot;
                 <a href="https://arxiv.org/a/thakur_r_1.html">arXiv</a> &middot;

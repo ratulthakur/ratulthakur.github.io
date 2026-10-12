@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Posters &middot; Ratul Thakur</title>
+
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+
+<div class="topbar">
+    <div class="topbar-inner">
+        <a class="brand" href="index.html">Ratul Thakur</a>
+        <nav class="mainnav">
+            <a href="index.html#about">Home</a>
+            <a href="index.html#research">Research</a>
+            <a href="index.html#publications">Publications</a>
+            <a href="talks.html">Talks</a>
+            <a href="posters.html" class="active">Posters</a>
+            <a href="docs/CV-ratul-thakur.pdf">CV</a>
+            <a href="index.html#contact">Contact</a>
+            <button type="button" class="theme-toggle" aria-label="Dark theme" aria-pressed="true">
+                <span class="opt-light">light</span><span class="opt-dark">dark</span>
+            </button>
+        </nav>
+    </div>
+</div>
+
+<main class="page">
+
+    <header class="page-header">
+        <h1>Posters</h1>
+        <p>Posters presented at conferences, schools, and workshops.</p>
+    </header>
+
+    <!--
+        To add a poster: put the PDF in /docs and a preview image in /img
+        (e.g. pdftoppm -jpeg -scale-to-x 900 -scale-to-y -1 -singlefile docs/X.pdf img/X),
+        then copy one <section class="poster"> block and edit it.
+        Newest posters should go at the top.
+    -->
+
+    <section class="poster">
+        <a class="poster-thumb" href="docs/info_lat_dyn_poster.pdf">
+            <img src="img/info_lat_dyn_poster.jpg" alt="Poster: Dynamics of local quantum information in random unitary circuits" loading="lazy">
+        </a>
+        <div>
+            <h2>Dynamics of local quantum information in random unitary circuits</h2>
+            <p class="authors"><strong>Ratul Thakur</strong> and Sthitadhi Roy</p>
+            <div class="meta">
+                <span class="date">Sep 2026</span>
+            </div>
+            <p class="venue">
+                Presented at <a href="https://www.pks.mpg.de/qmbsoe26">Quantum many-body systems out of equilibrium:
+                Relaxation, thermalization, and ergodicity breaking, 2026,</a> held at the Max Planck Institute for the
+                Physics of Complex Systems, Dresden, Germany.
+            </p>
+            <div class="links">
+                <a href="docs/info_lat_dyn_poster.pdf">Poster (PDF)</a>
+                <a href="https://arxiv.org/abs/2608.27440">arXiv:2608.27440</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    &copy; 2026 Ratul Thakur
+</footer>
+
+</body>
+</html>
